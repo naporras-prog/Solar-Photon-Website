@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solar Photon Exploration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #1f1f1f;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .text-section, .image-section {
+      background: #1f1f1f;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .image-section img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1f1f1f;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .hero-text { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Solar Photon Exploration</h1>
+  </header>
+  <section class="hero">
+    <img src="https://source.unsplash.com/1600x400/?solar" alt="Solar image" class="hero-image">
+    <div class="hero-text">Unveiling the Power of Light</div>
+  </section>
+  <section class="content">
+    <div class="text-section">
+      <h2>What is a Photon</h2>
+      <p>A photon is a particle representing a quantum of light or other electromagnetic radiation. It has zero rest mass and travels at the speed of light.</p>
+      <h2>Solar Energy Conversion</h2>
+      <p>Photovoltaic cells convert photons into electrical energy by absorbing light and generating free electrons through the photoelectric effect.</p>
+    </div>
+    <div class="image-section">
+      <img src="https://source.unsplash.com/800x600/?solar-panel" alt="Solar panels">
+      <p>Photovoltaic cells harness solar photons to produce electricity.</p>
+    </div>
+  </section>
+  <footer>
+    &copy; 2025 Solar Photon Exploration. Developed by Matteo.
+  </footer>
+</body>
+</html>
