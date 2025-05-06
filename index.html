@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Solar Photon Exploration</title>
+  <title>The Secret Life of a Photon</title>
   <style>
     body {
       margin: 0;
@@ -14,82 +14,134 @@
     }
     header {
       text-align: center;
-      padding: 2rem;
-      background: #1f1f1f;
+      padding: 2rem 1rem;
+      background-color: #1f1f1f;
     }
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
-    .hero {
-      position: relative;
-      text-align: center;
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.1rem;
+      color: #bbbbbb;
     }
-    .hero-image {
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #333;
+    }
+    .section:nth-child(even) {
+      background-color: #181818;
+    }
+    .section-content {
+      flex: 1 1 300px;
+      max-width: 600px;
+      margin-right: 2rem;
+    }
+    .section-content h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    .section-images {
+      flex: 0 0 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .section-images img {
       width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      opacity: 0.8;
-    }
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1rem 2rem;
       border-radius: 8px;
-    }
-    .content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .text-section, .image-section {
-      background: #1f1f1f;
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-    .image-section img {
-      max-width: 100%;
-      border-radius: 4px;
     }
     footer {
       text-align: center;
       padding: 1rem;
-      background: #1f1f1f;
+      background-color: #1f1f1f;
       font-size: 0.9rem;
     }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      .hero-text { font-size: 1.5rem; }
-    }
+    /* Hide any broken images */
+    img { display: block; }
+    img[onerror] { /* placeholder to ensure JS-enabled hide */ }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('img').forEach(function(img) {
+        img.onerror = function() { this.style.display = 'none'; };
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
-    <h1>Solar Photon Exploration</h1>
+    <h1>The Secret Life of a Photon</h1>
+    <p>How a beam of light becomes the power in your home</p>
   </header>
-  <section class="hero">
-    <img src="https://source.unsplash.com/1600x400/?solar" alt="Solar image" class="hero-image">
-    <div class="hero-text">Unveiling the Power of Light</div>
-  </section>
-  <section class="content">
-    <div class="text-section">
-      <h2>What is a Photon</h2>
-      <p>A photon is a particle representing a quantum of light or other electromagnetic radiation. It has zero rest mass and travels at the speed of light.</p>
-      <h2>Solar Energy Conversion</h2>
-      <p>Photovoltaic cells convert photons into electrical energy by absorbing light and generating free electrons through the photoelectric effect.</p>
+
+  <!-- Section 1: Sun -->
+  <section class="section">
+    <div class="section-content">
+      <h2>🌞 Born in the Solar Core</h2>
+      <p>Meet Sunny the Photon! Deep in the Sun’s core, nuclear fusion fuses hydrogen into helium, releasing immense energy. Photons scatter through the radiative zone for thousands of years before reaching the photosphere.</p>
+      <p>Once at the surface, Sunny escapes and zips through space, arriving on Earth in just 8 minutes.</p>
     </div>
-    <div class="image-section">
-      <img src="https://source.unsplash.com/800x600/?solar-panel" alt="Solar panels">
-      <p>Photovoltaic cells harness solar photons to produce electricity.</p>
+    <div class="section-images">
+      <img src="images/sun_core.png" alt="Sun core illustration">
+      <img src="images/photosphere.png" alt="Sun photosphere diagram">
     </div>
   </section>
+
+  <!-- Section 2: Solar Panel -->
+  <section class="section">
+    <div class="section-content">
+      <h2>☀️ Hitting the Solar Panel</h2>
+      <p>When Sunny strikes a silicon solar cell, its energy excites electrons across the 1.1 eV bandgap. This creates electron–hole pairs that are separated by the internal electric field of the p–n junction.</p>
+      <p>The flow of these charge carriers generates a direct current (DC) voltage.</p>
+    </div>
+    <div class="section-images">
+      <img src="images/solar_panel.png" alt="Solar panel close-up">
+      <img src="images/electron_flow.png" alt="Electron flow in silicon">
+    </div>
+  </section>
+
+  <!-- Section 3: Inverter -->
+  <section class="section">
+    <div class="section-content">
+      <h2>⚡ Converting DC to AC</h2>
+      <p>Solar panels produce DC power. An inverter uses high-speed electronic switches (IGBTs or MOSFETs) to chop and invert this into a 60 Hz alternating current (AC) waveform compatible with the grid.</p>
+      <p>Microinverters attached to each panel optimize performance and mitigate shading effects.</p>
+    </div>
+    <div class="section-images">
+      <img src="images/inverter.png" alt="Inverter schematic">
+      <img src="images/grid_connection.png" alt="Grid connection overview">
+    </div>
+  </section>
+
+  <!-- Section 4: Home Connection -->
+  <section class="section">
+    <div class="section-content">
+      <h2>🔌 Supplying Your Home</h2>
+      <p>The AC power enters your home’s electrical panel and is distributed to outlets and lighting circuits. A smart meter tracks energy flow, enabling net metering: you send excess power back to the grid for credits.</p>
+    </div>
+    <div class="section-images">
+      <img src="images/home_panel.png" alt="Home electrical panel">
+    </div>
+  </section>
+
+  <!-- Section 5: LED Bulb -->
+  <section class="section">
+    <div class="section-content">
+      <h2>💡 Illuminating Life</h2>
+      <p>Finally, Sunny powers an LED bulb, converting electrical energy back into photons at high efficiency. LED technology reduces energy use and lasts longer, lighting our homes, schools, and streets sustainably.</p>
+    </div>
+    <div class="section-images">
+      <img src="images/led_bulb.png" alt="LED bulb lit">
+    </div>
+  </section>
+
   <footer>
-    &copy; 2025 Solar Photon Exploration. Developed by Matteo.
+    &copy; 2025 The Secret Life of a Photon. Developed by Matteo.
   </footer>
 </body>
 </html>
